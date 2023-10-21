@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace Supermarket_mvp.Views
 {
-    public partial class PayModelView : Form, IPayModeView
+    public partial class PayModeView : Form, IPayModeView
     {
         private bool isEdit;
         private bool isSuccessful;
         private string message;
 
-        public PayModelView()
+        public PayModeView()
         {
             InitializeComponent();
             AssociatedAndRaiseViewEvents();
