@@ -160,6 +160,7 @@
             // 
             DgPayMode.AllowUserToAddRows = false;
             DgPayMode.AllowUserToDeleteRows = false;
+            DgPayMode.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgPayMode.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgPayMode.Location = new Point(18, 83);
             DgPayMode.Name = "DgPayMode";
@@ -286,14 +287,14 @@
             label3.TabIndex = 0;
             label3.Text = "Pay Mode Id";
             // 
-            // PayModelView
+            // PayModeView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 521);
             Controls.Add(tabControl1);
             Controls.Add(panel1);
-            Name = "PayModelView";
+            Name = "PayModeView";
             Text = "Pay Mode Management";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

@@ -36,7 +36,8 @@ namespace Supermarket_mvp.Views
             };
         }
 
-        public string PayModeId {
+        public string PayModeId
+        {
             get { return TxtPayModeId.Text; }
             set { TxtPayModeId.Text = value; }
         }
@@ -45,7 +46,8 @@ namespace Supermarket_mvp.Views
             get { return TxtPayModeName.Text; }
             set { TxtPayModeName.Text = value; }
         }
-        public string PayModeObservation {
+        public string PayModeObservation
+        {
             get { return TxtPayModeObservation.Text; }
             set { TxtPayModeObservation.Text = value; }
         }
@@ -83,6 +85,28 @@ namespace Supermarket_mvp.Views
             DgPayMode.DataSource = payModeList;
         }
 
+        private static PayModeView instance;
+
+        public static PayModeView GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new PayModeView();
+                //instance.MdiParent = parenContainer;
+
+                instance.FormBorderStyle = FormBorderStyle.None;
+                instance.Dock = DockStyle.Fill;
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                {
+                    instance.WindowState = FormWindowState.Normal;
+                }
+                instance.BringToFront();
+            }
+            return instance;
+        }
 
     }
 }
