@@ -20,12 +20,12 @@ namespace Supermarket_mvp.Views
             InitializeComponent();
             AssociatedAndRaiseViewEvents();
             tabControl1.TabPages.Remove(tabCategoryDetail);
-
+            BtnCloseCate.Click += delegate { this.Close(); };
         }
 
         private void AssociatedAndRaiseViewEvents()
         {
-            BtnSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
+            BtnSearchCate.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
 
             TxtSearch.KeyDown += (s, e) =>
             {
@@ -33,6 +33,50 @@ namespace Supermarket_mvp.Views
                 {
                     SearchEvent?.Invoke(this, EventArgs.Empty);
                 }
+            };
+            BtnNewCate.Click += delegate
+            {
+                AddNewEvent?.Invoke(this, EventArgs.Empty);
+                tabControl1.TabPages.Remove(tabCategoryList);
+                tabControl1.TabPages.Add(tabCategoryDetail);
+                tabCategoryDetail.Text = "Add New Category";
+            };
+            BtnEditCate.Click += delegate
+            {
+                EditEvent?.Invoke(this, EventArgs.Empty);
+                tabControl1.TabPages.Remove(tabCategoryList);
+                tabControl1.TabPages.Add(tabCategoryDetail);
+                tabCategoryDetail.Text = "Edit Pay Mode";
+            };
+            BtnDeleteCate.Click += delegate
+            {
+                var result = MessageBox.Show(
+                    "Are you sure you want to delete the selected Pay Mode",
+                    "Warning",
+             MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    DeleteEvent?.Invoke(this, EventArgs.Empty);
+                    MessageBox.Show(Message);
+                }
+            };
+            BtnSaveCate.Click += delegate
+            {
+                SaveEvent?.Invoke(this, EventArgs.Empty);
+                if (isSuccessful)
+                {
+
+                    tabControl1.TabPages.Remove(tabCategoryDetail);
+                    tabControl1.TabPages.Add(tabCategoryList);
+
+                }
+                MessageBox.Show(Message);
+            };
+            BtnCancelCate.Click += delegate
+            {
+                CancelEvent?.Invoke(this, EventArgs.Empty);
+                tabControl1.TabPages.Remove(tabCategoryDetail);
+                tabControl1.TabPages.Add(tabCategoryList);
             };
         }
 
@@ -51,7 +95,8 @@ namespace Supermarket_mvp.Views
             get { return TxtCategorieObservation.Text; }
             set { TxtCategorieObservation.Text = value; }
         }
-        public string SearchValue {
+        public string SearchValue
+        {
             get { return TxtSearch.Text; }
             set { TxtSearch.Text = value; }
         }
@@ -82,5 +127,28 @@ namespace Supermarket_mvp.Views
         {
             DgCategories.DataSource = categorieList;
         }
+        private static CategoriesView instance;
+        public static CategoriesView GetInstance(Form parentContainer)
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new CategoriesView();
+                instance.MdiParent = parentContainer;
+
+                instance.FormBorderStyle = FormBorderStyle.None;
+                instance.Dock = DockStyle.Fill;
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                {
+                    instance.WindowState = FormWindowState.Normal;
+                }
+                instance.BringToFront();
+            }
+            return instance;
+        }
+
     }
 }
+

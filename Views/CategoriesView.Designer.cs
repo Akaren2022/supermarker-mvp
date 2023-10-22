@@ -38,13 +38,8 @@
             BtnEditCate = new Button();
             BtnNewCate = new Button();
             BtnSearchCate = new Button();
-            BtnClose = new Button();
-            BtnDelete = new Button();
-            BtnEdit = new Button();
-            BtnNew = new Button();
-            DgCategories = new DataGridView();
-            BtnSearch = new Button();
-            TxtSearch = new TextBox();
+           DgCategories = new DataGridView();
+           TxtSearch = new TextBox();
             label2 = new Label();
             tabCategoryDetail = new TabPage();
             BtnCancelCate = new Button();
@@ -95,8 +90,8 @@
             // 
             // tabControl1
             // 
-            tabControl1.Controls.Add(tabCategoryList);
             tabControl1.Controls.Add(tabCategoryDetail);
+            tabControl1.Controls.Add(tabCategoryList);
             tabControl1.Location = new Point(8, 128);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -110,12 +105,7 @@
             tabCategoryList.Controls.Add(BtnEditCate);
             tabCategoryList.Controls.Add(BtnNewCate);
             tabCategoryList.Controls.Add(BtnSearchCate);
-            tabCategoryList.Controls.Add(BtnClose);
-            tabCategoryList.Controls.Add(BtnDelete);
-            tabCategoryList.Controls.Add(BtnEdit);
-            tabCategoryList.Controls.Add(BtnNew);
             tabCategoryList.Controls.Add(DgCategories);
-            tabCategoryList.Controls.Add(BtnSearch);
             tabCategoryList.Controls.Add(TxtSearch);
             tabCategoryList.Controls.Add(label2);
             tabCategoryList.Location = new Point(4, 29);
@@ -181,50 +171,6 @@
             BtnSearchCate.TabIndex = 8;
             BtnSearchCate.UseVisualStyleBackColor = true;
             // 
-            // BtnClose
-            // 
-            BtnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            BtnClose.BackgroundImage = Properties.Resources.cerrar;
-            BtnClose.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnClose.Location = new Point(1161, 235);
-            BtnClose.Name = "BtnClose";
-            BtnClose.Size = new Size(94, 38);
-            BtnClose.TabIndex = 7;
-            BtnClose.UseVisualStyleBackColor = true;
-            // 
-            // BtnDelete
-            // 
-            BtnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            BtnDelete.BackgroundImage = Properties.Resources.delete;
-            BtnDelete.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnDelete.Location = new Point(1161, 170);
-            BtnDelete.Name = "BtnDelete";
-            BtnDelete.Size = new Size(94, 39);
-            BtnDelete.TabIndex = 6;
-            BtnDelete.UseVisualStyleBackColor = true;
-            // 
-            // BtnEdit
-            // 
-            BtnEdit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            BtnEdit.BackgroundImage = Properties.Resources.edit;
-            BtnEdit.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnEdit.Location = new Point(1161, 109);
-            BtnEdit.Name = "BtnEdit";
-            BtnEdit.Size = new Size(94, 38);
-            BtnEdit.TabIndex = 5;
-            BtnEdit.UseVisualStyleBackColor = true;
-            // 
-            // BtnNew
-            // 
-            BtnNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            BtnNew.BackgroundImage = Properties.Resources._new;
-            BtnNew.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnNew.Location = new Point(1161, 47);
-            BtnNew.Name = "BtnNew";
-            BtnNew.Size = new Size(94, 40);
-            BtnNew.TabIndex = 4;
-            BtnNew.UseVisualStyleBackColor = true;
-            // 
             // DgCategories
             // 
             DgCategories.AllowUserToAddRows = false;
@@ -239,17 +185,6 @@
             DgCategories.RowTemplate.Height = 29;
             DgCategories.Size = new Size(489, 296);
             DgCategories.TabIndex = 3;
-            // 
-            // BtnSearch
-            // 
-            BtnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            BtnSearch.BackgroundImage = Properties.Resources.search_small;
-            BtnSearch.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnSearch.Location = new Point(1014, 32);
-            BtnSearch.Name = "BtnSearch";
-            BtnSearch.Size = new Size(50, 48);
-            BtnSearch.TabIndex = 2;
-            BtnSearch.UseVisualStyleBackColor = true;
             // 
             // TxtSearch
             // 
@@ -367,8 +302,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(760, 574);
-            Controls.Add(tabControl1);
             Controls.Add(panel1);
+            Controls.Add(tabControl1);
             Name = "CategoriesView";
             Text = "Category Management";
             panel1.ResumeLayout(false);
@@ -390,12 +325,7 @@
         private Label label1;
         private TabControl tabControl1;
         private TabPage tabCategoryList;
-        private Button BtnClose;
-        private Button BtnDelete;
-        private Button BtnEdit;
-        private Button BtnNew;
         private DataGridView DgCategories;
-        private Button BtnSearch;
         private TextBox TxtSearch;
         private Label label2;
         private TabPage tabCategoryDetail;
