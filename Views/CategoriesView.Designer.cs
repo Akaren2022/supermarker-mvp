@@ -32,15 +32,6 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             tabControl1 = new TabControl();
-            tabCategoryList = new TabPage();
-            BtnCloseCate = new Button();
-            BtnDeleteCate = new Button();
-            BtnEditCate = new Button();
-            BtnNewCate = new Button();
-            BtnSearchCate = new Button();
-           DgCategories = new DataGridView();
-           TxtSearch = new TextBox();
-            label2 = new Label();
             tabCategoryDetail = new TabPage();
             BtnCancelCate = new Button();
             BtnSaveCate = new Button();
@@ -50,12 +41,21 @@
             label4 = new Label();
             TxtCategoryId = new TextBox();
             label3 = new Label();
+            tabCategoryList = new TabPage();
+            BtnCloseCate = new Button();
+            BtnDeleteCate = new Button();
+            BtnEditCate = new Button();
+            BtnNewCate = new Button();
+            BtnSearchCate = new Button();
+            DgCategories = new DataGridView();
+            TxtSearch = new TextBox();
+            label2 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
+            tabCategoryDetail.SuspendLayout();
             tabCategoryList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DgCategories).BeginInit();
-            tabCategoryDetail.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -97,6 +97,98 @@
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(752, 442);
             tabControl1.TabIndex = 2;
+            // 
+            // tabCategoryDetail
+            // 
+            tabCategoryDetail.Controls.Add(BtnCancelCate);
+            tabCategoryDetail.Controls.Add(BtnSaveCate);
+            tabCategoryDetail.Controls.Add(TxtCategorieObservation);
+            tabCategoryDetail.Controls.Add(label5);
+            tabCategoryDetail.Controls.Add(TxtCategoryName);
+            tabCategoryDetail.Controls.Add(label4);
+            tabCategoryDetail.Controls.Add(TxtCategoryId);
+            tabCategoryDetail.Controls.Add(label3);
+            tabCategoryDetail.Location = new Point(4, 29);
+            tabCategoryDetail.Name = "tabCategoryDetail";
+            tabCategoryDetail.Padding = new Padding(3);
+            tabCategoryDetail.Size = new Size(744, 409);
+            tabCategoryDetail.TabIndex = 1;
+            tabCategoryDetail.Text = "Category Detail";
+            tabCategoryDetail.UseVisualStyleBackColor = true;
+            // 
+            // BtnCancelCate
+            // 
+            BtnCancelCate.BackgroundImage = Properties.Resources.cancel;
+            BtnCancelCate.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnCancelCate.Location = new Point(166, 290);
+            BtnCancelCate.Name = "BtnCancelCate";
+            BtnCancelCate.Size = new Size(94, 47);
+            BtnCancelCate.TabIndex = 7;
+            BtnCancelCate.UseVisualStyleBackColor = true;
+            // 
+            // BtnSaveCate
+            // 
+            BtnSaveCate.BackgroundImage = Properties.Resources.save;
+            BtnSaveCate.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnSaveCate.Location = new Point(47, 290);
+            BtnSaveCate.Name = "BtnSaveCate";
+            BtnSaveCate.Size = new Size(94, 47);
+            BtnSaveCate.TabIndex = 6;
+            BtnSaveCate.UseVisualStyleBackColor = true;
+            // 
+            // TxtCategorieObservation
+            // 
+            TxtCategorieObservation.Location = new Point(25, 196);
+            TxtCategorieObservation.Multiline = true;
+            TxtCategorieObservation.Name = "TxtCategorieObservation";
+            TxtCategorieObservation.PlaceholderText = "Observation";
+            TxtCategorieObservation.Size = new Size(366, 77);
+            TxtCategorieObservation.TabIndex = 5;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(27, 176);
+            label5.Name = "label5";
+            label5.Size = new Size(89, 20);
+            label5.TabIndex = 4;
+            label5.Text = "Observation";
+            // 
+            // TxtCategoryName
+            // 
+            TxtCategoryName.Location = new Point(24, 114);
+            TxtCategoryName.Name = "TxtCategoryName";
+            TxtCategoryName.PlaceholderText = "Category Name";
+            TxtCategoryName.Size = new Size(367, 27);
+            TxtCategoryName.TabIndex = 3;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(26, 94);
+            label4.Name = "label4";
+            label4.Size = new Size(113, 20);
+            label4.TabIndex = 2;
+            label4.Text = "Category Name";
+            // 
+            // TxtCategoryId
+            // 
+            TxtCategoryId.Location = new Point(23, 36);
+            TxtCategoryId.Name = "TxtCategoryId";
+            TxtCategoryId.ReadOnly = true;
+            TxtCategoryId.Size = new Size(168, 27);
+            TxtCategoryId.TabIndex = 1;
+            TxtCategoryId.Text = "0";
+            TxtCategoryId.TextAlign = HorizontalAlignment.Right;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(26, 16);
+            label3.Name = "label3";
+            label3.Size = new Size(86, 20);
+            label3.TabIndex = 0;
+            label3.Text = "Category Id";
             // 
             // tabCategoryList
             // 
@@ -205,98 +297,6 @@
             label2.TabIndex = 0;
             label2.Text = "Search Categories";
             // 
-            // tabCategoryDetail
-            // 
-            tabCategoryDetail.Controls.Add(BtnCancelCate);
-            tabCategoryDetail.Controls.Add(BtnSaveCate);
-            tabCategoryDetail.Controls.Add(TxtCategorieObservation);
-            tabCategoryDetail.Controls.Add(label5);
-            tabCategoryDetail.Controls.Add(TxtCategoryName);
-            tabCategoryDetail.Controls.Add(label4);
-            tabCategoryDetail.Controls.Add(TxtCategoryId);
-            tabCategoryDetail.Controls.Add(label3);
-            tabCategoryDetail.Location = new Point(4, 29);
-            tabCategoryDetail.Name = "tabCategoryDetail";
-            tabCategoryDetail.Padding = new Padding(3);
-            tabCategoryDetail.Size = new Size(744, 409);
-            tabCategoryDetail.TabIndex = 1;
-            tabCategoryDetail.Text = "Category Detail";
-            tabCategoryDetail.UseVisualStyleBackColor = true;
-            // 
-            // BtnCancelCate
-            // 
-            BtnCancelCate.BackgroundImage = Properties.Resources.cancel;
-            BtnCancelCate.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnCancelCate.Location = new Point(166, 290);
-            BtnCancelCate.Name = "BtnCancelCate";
-            BtnCancelCate.Size = new Size(94, 47);
-            BtnCancelCate.TabIndex = 7;
-            BtnCancelCate.UseVisualStyleBackColor = true;
-            // 
-            // BtnSaveCate
-            // 
-            BtnSaveCate.BackgroundImage = Properties.Resources.save;
-            BtnSaveCate.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnSaveCate.Location = new Point(47, 290);
-            BtnSaveCate.Name = "BtnSaveCate";
-            BtnSaveCate.Size = new Size(94, 47);
-            BtnSaveCate.TabIndex = 6;
-            BtnSaveCate.UseVisualStyleBackColor = true;
-            // 
-            // TxtCategorieObservation
-            // 
-            TxtCategorieObservation.Location = new Point(25, 196);
-            TxtCategorieObservation.Multiline = true;
-            TxtCategorieObservation.Name = "TxtCategorieObservation";
-            TxtCategorieObservation.PlaceholderText = "Observation";
-            TxtCategorieObservation.Size = new Size(366, 77);
-            TxtCategorieObservation.TabIndex = 5;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(27, 176);
-            label5.Name = "label5";
-            label5.Size = new Size(89, 20);
-            label5.TabIndex = 4;
-            label5.Text = "Observation";
-            // 
-            // TxtCategoryName
-            // 
-            TxtCategoryName.Location = new Point(24, 114);
-            TxtCategoryName.Name = "TxtCategoryName";
-            TxtCategoryName.PlaceholderText = "Category Name";
-            TxtCategoryName.Size = new Size(367, 27);
-            TxtCategoryName.TabIndex = 3;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(26, 94);
-            label4.Name = "label4";
-            label4.Size = new Size(113, 20);
-            label4.TabIndex = 2;
-            label4.Text = "Category Name";
-            // 
-            // TxtCategoryId
-            // 
-            TxtCategoryId.Location = new Point(23, 36);
-            TxtCategoryId.Name = "TxtCategoryId";
-            TxtCategoryId.ReadOnly = true;
-            TxtCategoryId.Size = new Size(168, 27);
-            TxtCategoryId.TabIndex = 1;
-            TxtCategoryId.Text = "0";
-            TxtCategoryId.TextAlign = HorizontalAlignment.Right;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(26, 16);
-            label3.Name = "label3";
-            label3.Size = new Size(86, 20);
-            label3.TabIndex = 0;
-            label3.Text = "Category Id";
-            // 
             // CategoriesView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -310,11 +310,11 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabControl1.ResumeLayout(false);
+            tabCategoryDetail.ResumeLayout(false);
+            tabCategoryDetail.PerformLayout();
             tabCategoryList.ResumeLayout(false);
             tabCategoryList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)DgCategories).EndInit();
-            tabCategoryDetail.ResumeLayout(false);
-            tabCategoryDetail.PerformLayout();
             ResumeLayout(false);
         }
 
