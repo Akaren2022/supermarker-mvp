@@ -68,8 +68,9 @@ namespace Supermarket_mvp.Presenters
                     view.Message = "PayMode added Successfuly";
                 }
                 view.IsSuccessful = true;
-                LoadAllPayModeList();
+              
                 CleanViewFields();
+                LoadAllPayModeList();
 
             }
             catch (Exception ex)
